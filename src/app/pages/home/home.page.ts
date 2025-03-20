@@ -20,6 +20,7 @@ import {
   notifications,
   options,
 } from 'ionicons/icons';
+import { ListHeadingComponent } from 'src/app/components/list-heading/list-heading.component';
 
 @Component({
   selector: 'app-home',
@@ -37,6 +38,7 @@ import {
     IonLabel,
     IonHeader,
     IonContent,
+    ListHeadingComponent,
   ],
 })
 export class HomePage {
