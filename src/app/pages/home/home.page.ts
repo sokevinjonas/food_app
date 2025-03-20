@@ -1,20 +1,46 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Component } from '@angular/core';
+import {
+  IonHeader,
+  IonContent,
+  IonLabel,
+  IonItem,
+  IonTitle,
+  IonToolbar,
+  IonIcon,
+  IonText,
+  IonButton,
+  IonSearchbar,
+  IonCol,
+  IonRow,
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import {
+  chevronDownOutline,
+  location,
+  notifications,
+  options,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
-  standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+  imports: [
+    IonRow,
+    IonCol,
+    IonSearchbar,
+    IonButton,
+    IonText,
+    IonIcon,
+    IonToolbar,
+    IonItem,
+    IonLabel,
+    IonHeader,
+    IonContent,
+  ],
 })
-export class HomePage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class HomePage {
+  constructor() {
+    addIcons({ location, chevronDownOutline, notifications, options });
   }
-
 }
