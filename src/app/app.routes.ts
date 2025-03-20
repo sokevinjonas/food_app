@@ -38,4 +38,11 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'product/:id',
+    loadComponent: () =>
+      import('./pages/product-detail/product-detail.page').then(
+        (m) => m.ProductDetailPage
+      ),
+  },
 ];

@@ -1,5 +1,5 @@
 @defer(when item !== null) {
-<ion-card [routerLink]="['/', 'tabs', 'products', item()?.id]">
+<ion-card [routerLink]="['/', 'product', item()?.id]">
   <ion-thumbnail>
     <ion-img
       [src]="item()?.image || 'assets/products/chocolate-cake.jpg'"
