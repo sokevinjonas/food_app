@@ -1,13 +1,127 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profil</ion-title>
+<!-- profile.page.html -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <div class="header-content">
+      <h1>Réglages</h1>
+      <p>Paramètres de profil et de l'application</p>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!-- Section Profil Utilisateur (version compacte) -->
+  <div class="profile-header">
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img src="assets/imgs/avatar.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ user.nom }} {{ user.prenom }}</h2>
+        <p>{{ user.email }}</p>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <!-- Points de fidélité (version compacte) -->
+  <ion-item lines="none">
+    <ion-icon name="star" color="warning" slot="start"></ion-icon>
+    <ion-label>
+      <div class="loyalty-container">
+        <div class="points-value">
+          {{ user.points }} <span class="points-label">points</span>
+        </div>
+        <ion-progress-bar
+          [value]="user.points / 1000"
+          color="tertiary"
+        ></ion-progress-bar>
+        <small class="next-level"
+          >{{ 1000 - user.points }} points pour le niveau suivant</small
+        >
+      </div>
+    </ion-label>
+  </ion-item>
+
+  <!-- Section Paramètres Compte -->
+  <ion-list-header>
+    <ion-label color="dark">Mon Compte</ion-label>
+  </ion-list-header>
+
+  <ion-list lines="full">
+    <ion-item detail (click)="editProfile()">
+      <ion-icon name="create-outline" slot="start" color="primary"></ion-icon>
+      <ion-label>Modifier mon profil</ion-label>
+    </ion-item>
+
+    <ion-item detail (click)="changePassword()">
+      <ion-icon name="lock-closed" slot="start" color="primary"></ion-icon>
+      <ion-label>Changer de mot de passe</ion-label>
+    </ion-item>
+
+    <ion-item detail (click)="manageAddresses()">
+      <ion-icon name="location" slot="start" color="primary"></ion-icon>
+      <ion-label>Adresses de livraison</ion-label>
+    </ion-item>
+
+    <ion-item detail (click)="orderHistory()">
+      <ion-icon name="receipt" slot="start" color="primary"></ion-icon>
+      <ion-label>Historique des commandes</ion-label>
+    </ion-item>
+
+    <ion-item detail (click)="notifications()">
+      <ion-icon name="notifications" slot="start" color="primary"></ion-icon>
+      <ion-label>Notifications</ion-label>
+      <ion-badge color="danger" slot="end" *ngIf="notificationCount > 0"
+        >{{ notificationCount }}</ion-badge
+      >
+    </ion-item>
+  </ion-list>
+
+  <!-- Section Aide & Informations -->
+  <ion-list-header>
+    <ion-label color="dark">Aide & Informations</ion-label>
+  </ion-list-header>
+
+  <ion-list lines="full">
+    <ion-item detail (click)="openFAQ()">
+      <ion-icon name="help-circle" slot="start" color="tertiary"></ion-icon>
+      <ion-label>FAQ</ion-label>
+    </ion-item>
+
+    <ion-item detail (click)="openPrivacyPolicy()">
+      <ion-icon name="shield" slot="start" color="tertiary"></ion-icon>
+      <ion-label>Politique de confidentialité</ion-label>
+    </ion-item>
+
+    <ion-item detail (click)="openTerms()">
+      <ion-icon name="document-text" slot="start" color="tertiary"></ion-icon>
+      <ion-label>Conditions d'utilisation</ion-label>
+    </ion-item>
+
+    <ion-item detail (click)="contactSupport()">
+      <ion-icon name="headset" slot="start" color="tertiary"></ion-icon>
+      <ion-label>Service Client</ion-label>
+    </ion-item>
+
+    <ion-item (click)="changeLanguage()">
+      <ion-icon name="language" slot="start" color="tertiary"></ion-icon>
+      <ion-label>Langue</ion-label>
+      <ion-select
+        interface="popover"
+        [(ngModel)]="selectedLanguage"
+        (ionChange)="onLanguageChange()"
+      >
+        <ion-select-option value="fr">Français</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="ar">العربية</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <div class="logout-button-container">
+    <ion-button expand="block" fill="outline" color="danger" (click)="logout()">
+      <ion-icon name="log-out" slot="start"></ion-icon>
+      Se déconnecter
+    </ion-button>
+  </div>
 </ion-content>

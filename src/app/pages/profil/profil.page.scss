@@ -1,0 +1,118 @@
+.header-content {
+  padding: 8px 16px;
+  text-align: start;
+}
+
+.header-content h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.header-content p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+//
+.profile-header {
+  padding: 12px 0;
+}
+
+.profile-header ion-item {
+  --background: transparent;
+}
+
+.profile-header h2 {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: var(--ion-color-dark);
+}
+
+.profile-header p {
+  color: var(--ion-color-medium);
+  font-size: var(--font-size-small);
+}
+
+.loyalty-container {
+  width: 100%;
+  padding: 8px 0;
+}
+
+.points-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--ion-color-tertiary);
+  margin-bottom: 8px;
+}
+
+.points-label {
+  font-size: 0.9rem;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+.next-level {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  color: var(--ion-color-medium);
+}
+
+/* profile.page.scss */
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: var(--spacing-medium);
+  border: 3px solid var(--ion-color-secondary);
+}
+
+.user-name {
+  font-size: var(--font-size-x-large);
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: var(--ion-color-dark);
+}
+
+.user-email {
+  font-size: var(--font-size-medium);
+  color: var(--ion-color-medium);
+  margin-bottom: var(--spacing-medium);
+}
+
+.loyalty-points {
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--ion-color-tertiary);
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 0;
+    color: var(--ion-color-medium);
+  }
+}
+
+ion-list-header {
+  padding-top: var(--spacing-large);
+  ion-label {
+    font-size: var(--font-size-large);
+    font-weight: bold;
+  }
+}
+
+ion-icon {
+  font-size: var(--icon-size-medium);
+}
+
+.logout-button-container {
+  margin: var(--spacing-large) 0;
+}
+
+ion-item {
+  --padding-start: var(--spacing-medium);
+  --inner-padding-end: var(--spacing-medium);
+}
