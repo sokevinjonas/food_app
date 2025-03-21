@@ -86,6 +86,7 @@ ion-list {
       margin-top: 10px;
       display: -webkit-box;
       -webkit-line-clamp: 3; /* Show only 3 full lines */
+      line-clamp: 3; /* Show only 3 full lines */
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -94,6 +95,7 @@ ion-list {
     .expanded {
       display: block; /* Show full text when expanded */
       -webkit-line-clamp: unset;
+      line-clamp: unset;
       -webkit-box-orient: unset;
       overflow: visible;
       text-overflow: unset;
@@ -116,30 +118,6 @@ ion-list {
     ion-button.selected {
       --background: var(--ion-color-primary);
       color: white;
-    }
-  }
-}
-
-ion-footer {
-  ion-toolbar {
-    //   --background: var(--ion-background-color);
-    --background: white;
-  }
-  ion-col[size="4"] {
-    display: flex;
-    align-items: center;
-    ion-label {
-      color: gray;
-      margin-inline-start: 10px;
-      p {
-        margin-top: 5px;
-      }
-    }
-  }
-  ion-button {
-    ion-icon {
-      font-size: var(--icon-size-medium);
-      margin-right: 10px;
     }
   }
 }

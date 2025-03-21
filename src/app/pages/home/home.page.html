@@ -43,5 +43,37 @@
     [products]="products()"
   ></app-product-list-horizontal>
 
+  <app-list-heading heading="Burgers"></app-list-heading>
+  <app-product-list-horizontal
+    [products]="products()"
+  ></app-product-list-horizontal>
+
+  <app-list-heading heading="Familial"></app-list-heading>
+  <app-product-list-horizontal
+    [products]="products()"
+  ></app-product-list-horizontal>
   }
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <!-- Ligne 1: Informations de livraison -->
+    <ion-item lines="none" detail="true" class="delivery-row">
+      <ion-icon name="bicycle-outline" slot="start"></ion-icon>
+      <ion-label class="ion-text-center">Livraison 100 Fcfa</ion-label>
+    </ion-item>
+
+    <!-- Ligne 2: Bouton Panier -->
+    <ion-button expand="block" class="cart-button">
+      <div class="cart-button-content">
+        <div class="delivery-time">
+          <ion-icon name="time-outline"></ion-icon>
+          <span>40-50min</span>
+        </div>
+
+        <div class="cart-text">Suivant</div>
+
+        <div class="cart-total">30 500 F</div>
+      </div>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

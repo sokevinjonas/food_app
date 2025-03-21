@@ -11,13 +11,16 @@ import {
   IonSearchbar,
   IonCol,
   IonRow,
+  IonFooter,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import {
+  bicycleOutline,
   chevronDownOutline,
   location,
   notifications,
   options,
+  timeOutline,
 } from 'ionicons/icons';
 import { BannerComponent } from 'src/app/components/banner/banner.component';
 import { ListHeadingComponent } from 'src/app/components/list-heading/list-heading.component';
@@ -35,6 +38,7 @@ import { ProductListHorizontalComponent } from '../../components/product-list-ho
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
+    IonFooter,
     IonRow,
     IonCol,
     IonSearchbar,
@@ -61,6 +65,13 @@ export class HomePage {
   categories = computed<Category[]>(() => this.categoryService.getCategories());
   products = computed<Product[]>(() => this.productService.getProducts());
   constructor() {
-    addIcons({ location, chevronDownOutline, notifications, options });
+    addIcons({
+      location,
+      chevronDownOutline,
+      notifications,
+      options,
+      bicycleOutline,
+      timeOutline,
+    });
   }
 }

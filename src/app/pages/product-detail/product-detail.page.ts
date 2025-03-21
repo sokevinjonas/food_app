@@ -6,7 +6,6 @@ import {
   IonToolbar,
   IonButtons,
   IonBackButton,
-  IonFabButton,
   IonIcon,
   IonRow,
   IonCol,
@@ -14,10 +13,7 @@ import {
   IonItem,
   IonLabel,
   IonText,
-  IonListHeader,
-  IonAvatar,
   IonButton,
-  IonFooter,
 } from '@ionic/angular/standalone';
 import { Product } from 'src/app/interfaces/product.interface';
 import { Category } from 'src/app/interfaces/category.interface';
@@ -31,10 +27,15 @@ import {
   chatboxEllipses,
   call,
   bagHandle,
+  removeCircle,
+  addCircle,
+  time,
 } from 'ionicons/icons';
 import { VegNonvegIndicatorComponent } from 'src/app/widgets/veg-nonveg-indicator/veg-nonveg-indicator.component';
 import { Seller } from 'src/app/interfaces/seller.interface';
 import { ImageRectBoxComponent } from '../../widgets/image-rect-box/image-rect-box.component';
+import { ProductFooterAddComponent } from '../../components/product-footer-add/product-footer-add.component';
+import { ProductAccompagnementsComponent } from '../../components/product-accompagnements/product-accompagnements.component';
 
 @Component({
   selector: 'app-product-detail',
@@ -42,10 +43,7 @@ import { ImageRectBoxComponent } from '../../widgets/image-rect-box/image-rect-b
   styleUrls: ['./product-detail.page.scss'],
   standalone: true,
   imports: [
-    IonFooter,
     IonButton,
-    IonAvatar,
-    IonListHeader,
     IonText,
     IonLabel,
     IonItem,
@@ -53,7 +51,6 @@ import { ImageRectBoxComponent } from '../../widgets/image-rect-box/image-rect-b
     IonCol,
     IonRow,
     IonIcon,
-    IonFabButton,
     IonBackButton,
     IonButtons,
     IonContent,
@@ -62,6 +59,8 @@ import { ImageRectBoxComponent } from '../../widgets/image-rect-box/image-rect-b
     NgClass,
     VegNonvegIndicatorComponent,
     ImageRectBoxComponent,
+    ProductFooterAddComponent,
+    ProductAccompagnementsComponent,
   ],
 })
 export class ProductDetailPage implements OnInit {
@@ -76,12 +75,15 @@ export class ProductDetailPage implements OnInit {
 
   constructor() {
     addIcons({
+      star,
+      time,
+      removeCircle,
+      addCircle,
+      bagHandle,
       heartOutline,
       shareSocialOutline,
-      star,
       chatboxEllipses,
       call,
-      bagHandle,
     });
   }
 

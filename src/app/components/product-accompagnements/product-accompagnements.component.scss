@@ -1,0 +1,33 @@
+/* CSS minimal pour l'interface sans cards */
+ion-item-divider {
+  margin-top: 1rem;
+}
+ion-list {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+ion-item {
+  --padding-start: 8px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  p {
+    margin: 2px 0 0 0;
+    color: var(--ion-color-medium);
+  }
+
+  ion-note {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+/* Espacement entre les sections */
+ion-radio-group ion-list {
+  margin-bottom: 16px;
+}

@@ -1,0 +1,42 @@
+<ion-footer class="product-footer">
+  <ion-toolbar>
+    <!-- Informations prix -->
+    <div class="price-container">
+      <div class="price-label">
+        <ion-label class="medium-label">Nom de l'article</ion-label>
+      </div>
+      <div class="price-value">
+        <ion-text color="dark" class="price-text"> 10,0000 Fcfa</ion-text>
+      </div>
+    </div>
+
+    <!-- Actions container -->
+    <div class="actions-container">
+      <!-- Quantity selector -->
+      <div class="quantity-selector">
+        <ion-button fill="clear" class="quantity-btn">
+          <ion-icon name="remove-circle" color="primary"></ion-icon>
+        </ion-button>
+
+        <span class="quantity-value"> 1</span>
+
+        <ion-button fill="clear" class="quantity-btn">
+          <ion-icon name="add-circle" color="primary"></ion-icon>
+        </ion-button>
+      </div>
+
+      <!-- Add to cart button -->
+      <ion-button
+        size="large"
+        expand="block"
+        shape="round"
+        [strong]="true"
+        mode="ios"
+        class="add-to-cart-btn"
+      >
+        <ion-icon slot="start" name="bag-handle"></ion-icon>
+        <ion-text class="add-text">Ajouter</ion-text>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
