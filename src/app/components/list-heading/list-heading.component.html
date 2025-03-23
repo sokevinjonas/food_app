@@ -1,6 +1,6 @@
 <ion-item-divider class="ion-margin-top" mode="ios">
-  {{ heading() }}
-  <ion-button slot="end" fill="clear" shape="round">
-    {{ buttonTitle() }}
+  {{ heading }}
+  <ion-button slot="end" fill="clear" shape="round" (click)="changePage()">
+    {{ buttonTitle }}
   </ion-button>
 </ion-item-divider>

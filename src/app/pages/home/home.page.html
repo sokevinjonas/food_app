@@ -17,12 +17,12 @@
       <ion-col size="12">
         <ion-searchbar
           #searchInput
-          debounce="800"
           color="light"
-          inputmode="search"
           class="srchBar"
+          readonly
           mode="ios"
           placeholder="Rechercher"
+          (click)="openSearchPage()"
         >
         </ion-searchbar>
       </ion-col>
@@ -32,10 +32,16 @@
 
 <ion-content>
   @if(categories().length > 0){
-  <app-list-heading heading="Offres speciales"></app-list-heading>
+  <app-list-heading
+    heading="Offres speciales"
+    name_page_next="offres"
+  ></app-list-heading>
   <app-banner [bannerImages]="banners()"></app-banner>
   } @if(categories().length > 0){
-  <app-list-heading heading="Categories"></app-list-heading>
+  <app-list-heading
+    heading="Categories"
+    name_page_next="category"
+  ></app-list-heading>
   <app-category [categories]="categories()"></app-category>
   } @if(products().length > 0) {
   <app-list-heading heading="Nouvelles saveurs"></app-list-heading>

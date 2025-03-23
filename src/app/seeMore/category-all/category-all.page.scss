@@ -1,0 +1,44 @@
+ion-grid {
+  padding: 0;
+}
+
+ion-card {
+  margin: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: calc(100% - 16px); // Pour maintenir une hauteur égale
+
+  ion-img {
+    height: 140px;
+    object-fit: cover;
+
+    @media (min-width: 768px) {
+      height: 160px; // Plus grand sur tablettes
+    }
+
+    @media (min-width: 992px) {
+      height: 180px; // Plus grand sur desktop
+    }
+  }
+
+  ion-card-content {
+    padding: 12px;
+
+    h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        font-size: 18px; // Plus grand sur tablettes et desktop
+      }
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+    transition: transform 0.2s;
+  }
+}

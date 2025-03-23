@@ -32,6 +32,7 @@ import { BannerService } from 'src/app/services/banner/banner.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { Product } from 'src/app/interfaces/product.interface';
 import { ProductListHorizontalComponent } from '../../components/product-list-horizontal/product-list-horizontal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -64,7 +65,7 @@ export class HomePage {
   banners = computed<Banner[]>(() => this.bannerService.getBanners());
   categories = computed<Category[]>(() => this.categoryService.getCategories());
   products = computed<Product[]>(() => this.productService.getProducts());
-  constructor() {
+  constructor(private route: Router) {
     addIcons({
       location,
       chevronDownOutline,
@@ -73,5 +74,8 @@ export class HomePage {
       bicycleOutline,
       timeOutline,
     });
+  }
+  openSearchPage() {
+    this.route.navigate(['/search']);
   }
 }

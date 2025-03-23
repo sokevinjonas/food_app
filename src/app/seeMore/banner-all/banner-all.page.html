@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Toutes nos Offres</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list class="image-list">
+    <ion-row>
+      @for (item of banner; track $index) {
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3" size-xl="2">
+        <div class="image-container">
+          <img [src]="item.image" alt="" class="grid-image" />
+        </div>
+      </ion-col>
+      }
+    </ion-row>
+  </ion-list>
+</ion-content>

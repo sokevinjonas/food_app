@@ -45,4 +45,19 @@ export const routes: Routes = [
         (m) => m.ProductDetailPage
       ),
   },
+  {
+    path: 'banner-all',
+    loadComponent: () =>
+      import('./seeMore/banner-all/banner-all.page').then(
+        (m) => m.BannerAllPage
+      ),
+  },
+  {
+    path: 'category-all',
+    loadComponent: () => import('./seeMore/category-all/category-all.page').then( m => m.CategoryAllPage)
+  },
+  {
+    path: 'search',
+    loadComponent: () => import('./pages/search/search.page').then( m => m.SearchPage)
+  },
 ];

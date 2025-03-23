@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nos Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <!-- On itère sur un tableau de catégories -->
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="4"
+        size-lg="3"
+        size-xl="2"
+        *ngFor="let category of categories"
+      >
+        <ion-card [button]="true">
+          <ion-img [src]="category.image" alt="{{ category.name }}"></ion-img>
+          <ion-card-content>
+            <ion-text color="primary">
+              <h2>{{ category.name }}</h2>
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

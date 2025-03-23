@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar
+      #searchPageInput
+      [(ngModel)]="searchTerm"
+      class="search-page-bar"
+      placeholder="Rechercher un plat..."
+      (ionChange)="searchItems()"
+      (ionClear)="clearSearch()"
+      enterkeyhint="search"
+      showCancelButton="never"
+      animated="true"
+      debounce="300"
+      autofocus="true"
+    >
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Recherches fréquentes (visible quand aucune recherche n'est active) -->
+  <div class="frequent-searches" *ngIf="!searchTerm">
+    <h2>Recherches fréquentes</h2>
+
+    <ion-list>
+      <ion-item
+        *ngFor="let result of frequentSearches"
+        (click)="selectResult(result)"
+      >
+        <ion-thumbnail slot="start">
+          <img [src]="result.image" alt="{{ result.name }}" />
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{ result.name }}</h3>
+          <p>{{ result.category }}</p>
+        </ion-label>
+        <ion-text slot="end" color="medium">{{ result.price }} Fcfa</ion-text>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Résultats de recherche -->
+  <div class="search-results" *ngIf="searchTerm && searchResults.length > 0">
+    <ion-list>
+      <ion-item
+        *ngFor="let result of searchResults"
+        (click)="selectResult(result)"
+      >
+        <ion-thumbnail slot="start">
+          <img [src]="result.image" alt="{{ result.name }}" />
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{ result.name }}</h3>
+          <p>{{ result.restaurant }}</p>
+        </ion-label>
+        <ion-text slot="end" color="medium">{{ result.price }} €</ion-text>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Aucun résultat -->
+  <div class="no-results" *ngIf="searchTerm && searchResults.length === 0">
+    <ion-text color="medium">
+      <h5>Aucun résultat trouvé pour "{{ searchTerm }}"</h5>
+      <p>Essayez avec d'autres mots-clés</p>
+    </ion-text>
+  </div>
+</ion-content>
